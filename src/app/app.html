@@ -7,4 +7,16 @@
   >
   clique sur moi pour changer l'activation de l'elevation
 </button>
+
+<input type="text"
+        [ngModel]="this.service.requete()"
+        (ngModelChange)="this.updateRequete($event)"
+
+>
+<button (click)="this.lancerRecherche()">
+  click sur moi pour lancer une recherche
+</button>
+
+{{this.data()|json}}
+
 </p>
