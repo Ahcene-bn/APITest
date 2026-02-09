@@ -27,6 +27,7 @@ export class App  {
         this.data.set(data);
         console.log(data);
       })
+    
     }
 
 

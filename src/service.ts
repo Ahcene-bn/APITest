@@ -18,7 +18,7 @@ export class directions {
    )
    readonly elevationToString=this.elevation()==true ? "true":"false"
 
-
+// signal pour définir le lieux à recherche 
    private _requete=signal<string|null>("Grenoble");
    readonly requete=computed(
     ()=>this._requete()
@@ -42,7 +42,8 @@ export class directions {
     }
 
     recherche(){
-      const url='https://api.openrouteservice.org/geocode/search?api_key=eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6ImU3OWI5YTJiZGRkMjQxNjJiODA0MzRhZTQ5MzhiNTM0IiwiaCI6Im11cm11cjY0In0=&text='+this.requete();
+      const api='ta clé api'
+      const url='https://api.openrouteservice.org/geocode/search?api_key='+api+'&text='+this.requete();
 
       return this.http.get(url);
     }
